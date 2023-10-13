@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 
 import es.oesia.jpa.Libro;
 
-public class Principal3 {
+public class Principal4 {
 
 	public static void main(String[] args) {
 		
@@ -19,8 +19,7 @@ public class Principal3 {
 		//aqui siempre el nombre de la entidad de jpa
 		// y luego un alias compacto
 		TypedQuery<Libro> consulta=
-				em.createQuery("select l from Libro l where"
-						+ " l.titulo='html' ",Libro.class);
+				em.createQuery("select l from Libro l where l.precio between 2 and 3",Libro.class);
 		List<Libro> lista=consulta.getResultList();
 		for (Libro l : lista) {
 			

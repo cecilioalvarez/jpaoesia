@@ -27,7 +27,7 @@ public class Principal4 {
 		//entidad puede estar en la base de datos
 		
 		//detached 
-		Libro libro= new Libro("2","net","pedro", new Date());
+		Libro libro= new Libro("2","net","pedro", new Date(),20);
 		em.merge(libro);
 		System.out.println(libro.getIsbn());
 		System.out.println(libro.getTitulo());

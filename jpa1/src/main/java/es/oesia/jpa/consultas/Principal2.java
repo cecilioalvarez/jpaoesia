@@ -19,7 +19,8 @@ public class Principal2 {
 		//aqui siempre el nombre de la entidad de jpa
 		// y luego un alias compacto
 		TypedQuery<Libro> consulta=
-				em.createQuery("select l from Libro l where l.titulo='html' ",Libro.class);
+				em.createQuery("select l from Libro l where l.titulo='html' "
+						+ "or l.precio=2",Libro.class);
 		List<Libro> lista=consulta.getResultList();
 		for (Libro l : lista) {
 			

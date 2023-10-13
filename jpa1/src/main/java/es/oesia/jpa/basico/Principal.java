@@ -15,7 +15,7 @@ public class Principal {
 		EntityManagerFactory emf= Persistence.createEntityManagerFactory("oesia");
 		EntityManager em= emf.createEntityManager();
 				
-		Libro libro= new Libro("1","Java","Pedro", new Date());
+		Libro libro= new Libro("1","Java","Pedro", new Date(),20);
 		em.getTransaction().begin();
 		em.persist(libro);
 		em.getTransaction().commit();

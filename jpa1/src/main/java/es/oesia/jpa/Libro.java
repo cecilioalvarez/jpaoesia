@@ -15,6 +15,8 @@ public class Libro {
 	private String titulo;
 	private String autor;
 	private Date fecha;
+	private double precio; 
+	
 	public String getIsbn() {
 		return isbn;
 	}
@@ -39,12 +41,22 @@ public class Libro {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	public Libro(String isbn, String titulo, String autor, Date fecha) {
+	
+	
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+	public Libro(String isbn, String titulo, String autor, Date fecha, double precio) {
 		super();
 		this.isbn = isbn;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.fecha = fecha;
+		this.precio = precio;
 	}
 	public Libro() {
 		super();
