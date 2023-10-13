@@ -1,21 +1,22 @@
 package es.oesia.jpa;
 
-import java.util.Date;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Principal {
+public class Principal2 {
 
 	public static void main(String[] args) {
-		//persistence unit se apoya
+		
+		
 		EntityManagerFactory emf= Persistence.createEntityManagerFactory("oesia");
 		EntityManager em= emf.createEntityManager();
-				
-		Libro libro= new Libro("1","Java","Pedro", new Date());
-		em.getTransaction().begin();
-		em.persist(libro);
-		em.getTransaction().commit();
+		Libro libro=em.find(Libro.class, "1");
+		System.out.println(libro.getIsbn());
+		System.out.println(libro.getAutor());
+		System.out.println(libro.getTitulo());
+		System.out.println(libro.getFecha());
+
 	}
+
 }
