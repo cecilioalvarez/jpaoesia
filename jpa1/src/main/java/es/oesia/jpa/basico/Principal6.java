@@ -1,4 +1,4 @@
-package es.oesia.jpa;
+package es.oesia.jpa.basico;
 
 import javax.persistence.Persistence;
 

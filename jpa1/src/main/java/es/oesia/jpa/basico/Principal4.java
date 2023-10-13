@@ -1,10 +1,14 @@
-package es.oesia.jpa;
+package es.oesia.jpa.basico;
+
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Principal3 {
+import es.oesia.jpa.Libro;
+
+public class Principal4 {
 
 	public static void main(String[] args) {
 		
@@ -19,10 +23,17 @@ public class Principal3 {
 		
 		// unas anotaciones una @discriminator y otra es la de mappedsupperclass
 		
-		Libro libro=em.find(Libro.class, "1");
+		//la entidad no existe porque puedo suponer que 
+		//entidad puede estar en la base de datos
+		
+		//detached 
+		Libro libro= new Libro("2","net","pedro", new Date());
+		em.merge(libro);
 		System.out.println(libro.getIsbn());
-		System.out.println(libro.getAutor());
 		System.out.println(libro.getTitulo());
+		System.out.println(libro.getAutor());
+		em.getTransaction().begin();
+		em.getTransaction().commit();
 		System.out.println(libro.getFecha());
 
 	}

@@ -1,8 +1,10 @@
-package es.oesia.jpa;
+package es.oesia.jpa.basico;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import es.oesia.jpa.Libro;
 
 public class Principal5 {
 
