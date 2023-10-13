@@ -8,13 +8,21 @@
 		<class>es.oesia.jpa.Libro</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.cj.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/oesia" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="" />
+			<!-- <property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" /> -->
 
+<property name="javax.persistence.jdbc.driver"
+				value="org.h2.Driver" />
+
+	<!-- <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/oesia" 
+		/> <property name="javax.persistence.jdbc.user" value="root" /> <property 
+		name="javax.persistence.jdbc.password" value="" /> -->
+
+
+<property name="javax.persistence.jdbc.url"
+				value="jdbc:h2:tcp://localhost/~/test"/>
+				<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
 			<property
 				name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
@@ -36,6 +44,9 @@
 				value="META-INF/borrar.sql" />
 			<property name="javax.persistence.sql-load-script-source"
 				value="META-INF/insertar.sql" />
+				
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+   
 
 		</properties>
 	</persistence-unit>
