@@ -1,10 +1,12 @@
 package es.oesia.jpa;
 
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Principal2 {
+public class Principal4 {
 
 	public static void main(String[] args) {
 		
@@ -19,16 +21,18 @@ public class Principal2 {
 		
 		// unas anotaciones una @discriminator y otra es la de mappedsupperclass
 		
-		// una entidad managed o gestionado por JPA
-		Libro libro=em.find(Libro.class, "1");
-		libro.setTitulo("java2");
-		libro.setTitulo("java");
-		em.getTransaction().begin();
-		em.merge(libro);
-		em.getTransaction().commit();
-		em.close();
+		//la entidad no existe porque puedo suponer que 
+		//entidad puede estar en la base de datos
 		
-		// las entidades pasan a estar detached
+		//detached 
+		Libro libro= new Libro("2","net","pedro", new Date());
+		em.merge(libro);
+		System.out.println(libro.getIsbn());
+		System.out.println(libro.getTitulo());
+		System.out.println(libro.getAutor());
+		em.getTransaction().begin();
+		em.getTransaction().commit();
+		System.out.println(libro.getFecha());
 
 	}
 
