@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 
 import es.oesia.jpa.Libro;
 
-public class Principal {
+public class Principal2 {
 
 	public static void main(String[] args) {
 
@@ -26,8 +26,8 @@ public class Principal {
 			System.out.println(l.getAutor());
 			System.out.println("--------------");
 			
-			System.out.println(l.getCategoria().getId());
-			System.out.println(l.getCategoria().getNombre());
+			//System.out.println(l.getCategoria().getId());
+			//System.out.println(l.getCategoria().getNombre());
 			System.out.println("************");
 		}
 		

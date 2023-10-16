@@ -19,7 +19,7 @@ public class Libro {
 	private String autor;
 	private Date fecha;
 	private double precio; 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name="categorias_id")
 	private Categoria categoria;
 	
@@ -77,6 +77,11 @@ public class Libro {
 	public Libro(String isbn) {
 		super();
 		this.isbn = isbn;
+	}
+	@Override
+	public String toString() {
+		return "Libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", fecha=" + fecha + ", precio="
+				+ precio;
 	}
 	
 	

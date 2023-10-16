@@ -1,4 +1,4 @@
-package es.oesia.jpa.relaciones;
+package es.oesia.jpa.relaciones.problermas;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import es.oesia.jpa.Libro;
 public class Principal {
 
 	public static void main(String[] args) {
-
+		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("oesia");
 		EntityManager em = emf.createEntityManager();
 		// aqui siempre el nombre de la entidad de jpa
@@ -22,20 +22,18 @@ public class Principal {
 		for (Libro l : lista) {
 
 			System.out.println(l.getIsbn());
-			System.out.println(l.getTitulo());
 			System.out.println(l.getAutor());
-			System.out.println("--------------");
-			
-			System.out.println(l.getCategoria().getId());
-			System.out.println(l.getCategoria().getNombre());
-			System.out.println("************");
-		}
+			System.out.println(l.getPrecio());
+			// para quedarme con la informacion extra
+			System.out.println(l);
 		
-		// yo tengo 7 filas en la tabla hago un select de la tabla
-		// eso es una primera consulta por cada libro se selecciona la categoria
-		// por lo tanto tengo 7+1= 8
-		// alguien me lo puede decir
+			System.out.println("--------------");
+		}
+	
 		
 	}
+
+
+	
 
 }
