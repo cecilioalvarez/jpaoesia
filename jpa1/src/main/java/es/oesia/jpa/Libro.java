@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,10 @@ public class Libro {
 	private String autor;
 	private Date fecha;
 	private double precio; 
+	@ManyToOne
+	@JoinColumn(name="categorias_id")
+	private Categoria categoria;
+	
 	
 	public String getIsbn() {
 		return isbn;
