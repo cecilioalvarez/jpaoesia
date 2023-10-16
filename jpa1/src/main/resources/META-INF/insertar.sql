@@ -12,3 +12,7 @@ INSERT INTO `Libros` (`isbn`, `titulo`, `autor`, `fecha`, `precio`,`categorias_i
 INSERT INTO `Libros` (`isbn`, `titulo`, `autor`, `fecha`, `precio`,`categorias_id`) VALUES ('6AC', 'php', 'cecilio', '2020-01-02', '3',4)
 INSERT INTO `Libros` (`isbn`, `titulo`, `autor`, `fecha`, `precio`,`categorias_id`) VALUES ('7BC', 'swing', 'gema', '2020-01-02', '2',5)
 INSERT INTO `Libros` (`isbn`, `titulo`, `autor`, `fecha`, `precio`,`categorias_id`) VALUES ('8BD', 'php laravel', 'andres', '2020-01-02', '2',4)
+
+
+INSERT INTO `Ejemplares` (`Codigo`, `Libros_isbn`) VALUES ('123','1AB' );
+

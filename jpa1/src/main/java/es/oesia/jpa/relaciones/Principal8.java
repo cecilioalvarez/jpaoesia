@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 import es.oesia.jpa.Ejemplar;
 import es.oesia.jpa.Libro;
 
-public class Principal7 {
+public class Principal8 {
 
 	public static void main(String[] args) {
 

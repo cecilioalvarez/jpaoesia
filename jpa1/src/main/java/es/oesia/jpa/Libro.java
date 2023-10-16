@@ -28,7 +28,7 @@ public class Libro {
 	@JoinColumn(name="categorias_id")
 	private Categoria categoria;
 	
-	@OneToMany(mappedBy="libro", cascade = {CascadeType.MERGE})
+	@OneToMany(mappedBy="libro", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	private List<Ejemplar> ejemplares= new ArrayList<Ejemplar>();
 	
 	
