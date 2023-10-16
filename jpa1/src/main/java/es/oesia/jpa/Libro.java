@@ -1,12 +1,17 @@
 package es.oesia.jpa;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +27,9 @@ public class Libro {
 	@ManyToOne(fetch =FetchType.LAZY)
 	@JoinColumn(name="categorias_id")
 	private Categoria categoria;
+	
+	@OneToMany(mappedBy="libro", cascade = {CascadeType.MERGE})
+	private List<Ejemplar> ejemplares= new ArrayList<Ejemplar>();
 	
 	
 	public Categoria getCategoria() {
@@ -83,7 +91,32 @@ public class Libro {
 		return "Libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", fecha=" + fecha + ", precio="
 				+ precio;
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(isbn);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Libro other = (Libro) obj;
+		return Objects.equals(isbn, other.isbn);
+	}
 	
+	public void addEjemplar(Ejemplar ejemplar) {
+		//una relacion bidireccional a nivel de clases
+		ejemplares.add(ejemplar);
+		ejemplar.setLibro(this);
+	}
+	
+	public void removeEjemplar(Ejemplar ejemplar) {
+		
+		ejemplares.remove(ejemplar);
+	}
 	
 	
 	
