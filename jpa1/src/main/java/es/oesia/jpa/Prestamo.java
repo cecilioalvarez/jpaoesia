@@ -1,4 +1,4 @@
-package es.oesia.jpa.relaciones;
+package es.oesia.jpa;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,9 +6,10 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import es.oesia.jpa.Ejemplar;
 
 @Entity
 @Table
@@ -16,6 +17,11 @@ public class Prestamo {
 	@Id
 	private int id;
 	private Date fecha;
+	
+	@ManyToMany
+	@JoinTable(name="EjemplaresPrestamo", 
+	joinColumns=@JoinColumn(name="id",nullable=false),
+	inverseJoinColumns=@JoinColumn(name="isbn",nullable=false))
 	private List<Ejemplar> ejemplares= new ArrayList<Ejemplar>();
 	public int getId() {
 		return id;

@@ -1,11 +1,14 @@
 package es.oesia.jpa;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -17,12 +20,18 @@ public class Ejemplar {
 	@ManyToOne (fetch = FetchType.LAZY)
 	@JoinColumn(name="libros_isbn")
 	private Libro libro;
+
+	@ManyToMany(mappedBy="ejemplares")
+	private List<Prestamo> prestamos= new ArrayList<Prestamo>();
 	
-	
-	
-	
-	
-	
+	public List<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+
+	public void setPrestamos(List<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}
+
 	public Libro getLibro() {
 		return libro;
 	}
