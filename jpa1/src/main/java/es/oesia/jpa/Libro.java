@@ -3,6 +3,7 @@ package es.oesia.jpa;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,11 +19,17 @@ public class Libro {
 	private String autor;
 	private Date fecha;
 	private double precio; 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="categorias_id")
 	private Categoria categoria;
 	
 	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 	public String getIsbn() {
 		return isbn;
 	}
