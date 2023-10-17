@@ -2,14 +2,15 @@ package es.oesia.jpa;
 
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyToOne;
+import org.hibernate.annotations.LazyToOneOption;
 
 @Entity
 @Table(name="socios")
@@ -19,6 +20,7 @@ public class Socio {
 	private String nombre;
 	private String apellidos;
 	@OneToOne(mappedBy="socio", fetch = FetchType.LAZY)
+	@LazyToOne(LazyToOneOption.NO_PROXY)
 	private Tarjeta tarjeta;
 	@Embedded
 	private Direccion direccion;
