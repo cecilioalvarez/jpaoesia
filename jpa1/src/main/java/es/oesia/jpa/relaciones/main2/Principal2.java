@@ -28,6 +28,8 @@ public class Principal2 {
 		for (Socio s:lista) {
 			
 			System.out.println(s);
+			System.out.println(s.getDireccion().getCalle());
+			System.out.println(s.getDireccion().getNumero());
 		}
 		/*
 		System.out.println(socio);

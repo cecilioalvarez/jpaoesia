@@ -3,6 +3,7 @@ package es.oesia.jpa;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -19,8 +20,16 @@ public class Socio {
 	private String apellidos;
 	@OneToOne(mappedBy="socio", fetch = FetchType.LAZY)
 	private Tarjeta tarjeta;
+	@Embedded
+	private Direccion direccion;
 	
 	
+	public Direccion getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
 	public String getApellidos() {
 		return apellidos;
 	}
