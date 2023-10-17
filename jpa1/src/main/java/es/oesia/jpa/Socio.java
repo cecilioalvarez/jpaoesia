@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,8 +17,7 @@ public class Socio {
 	private String dni;
 	private String nombre;
 	private String apellidos;
-	
-	@OneToOne(mappedBy="socio" ,cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+	@OneToOne(mappedBy="socio", fetch = FetchType.LAZY)
 	private Tarjeta tarjeta;
 	
 	
