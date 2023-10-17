@@ -11,11 +11,19 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Libros")
+@NamedQueries({
+	
+	@NamedQuery(name="Libro.buscarTodos",query="select l from Libro l"),
+	@NamedQuery(name="Libro.buscarTodosPorAutor",query="select l from Libro l where l.autor=:autor")
+
+})
 public class Libro {
 
 	@Id

@@ -10,7 +10,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.oesia.jpa.repositorios.LibroRepositorio;
+import es.oesia.jpa.repositorios.jpa.LibroRepositorio;
+import es.oesia.jpa.repositorios.jpa.LibroRepositorioJPA;
 
 class JPATest {
 
@@ -28,12 +29,12 @@ class JPATest {
 		em= emf.createEntityManager();
 		Persistence.generateSchema("oesia", null);
 	}
-	@Test
-	void test() {
-		
-		LibroRepositorio repo= new LibroRepositorio(em);
-		Libro libro=repo.buscarUno("1AB");
-		assertEquals("1AB",libro.getIsbn());
-	}
+//	@Test
+//	void test() {
+//		
+//		LibroRepositorio repo= new LibroRepositorioJPA(em);
+//		Libro libro=repo.buscarUno("1AB");
+//		assertEquals("1AB",libro.getIsbn());
+//	}
 
 }

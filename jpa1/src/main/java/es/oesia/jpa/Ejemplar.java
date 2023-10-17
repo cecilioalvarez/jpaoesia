@@ -13,17 +13,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="ejemplares")
+@Table(name = "ejemplares")
 public class Ejemplar {
 	@Id
 	private String codigo;
-	@ManyToOne (fetch = FetchType.LAZY)
-	@JoinColumn(name="libros_isbn")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "libros_isbn")
 	private Libro libro;
 
-	@ManyToMany(mappedBy="ejemplares")
-	private List<Prestamo> prestamos= new ArrayList<Prestamo>();
-	
+	@ManyToMany(mappedBy = "ejemplares")
+	private List<Prestamo> prestamos = new ArrayList<Prestamo>();
+
 	public List<Prestamo> getPrestamos() {
 		return prestamos;
 	}
@@ -73,6 +73,15 @@ public class Ejemplar {
 		Ejemplar other = (Ejemplar) obj;
 		return Objects.equals(codigo, other.codigo);
 	}
-	
-	
+
+	public void addPrestamo(Prestamo p) {
+
+		this.prestamos.add(p);
+	}
+
+	public void removePrestamo(Prestamo p) {
+
+		this.prestamos.remove(p);
+	}
+
 }

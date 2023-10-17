@@ -19,4 +19,6 @@ INSERT INTO `Ejemplares` (`Codigo`, `Libros_isbn`) VALUES ('123','1AB' );
 INSERT INTO `Ejemplares` (`Codigo`, `Libros_isbn`) VALUES ('234','1AB' );
 INSERT INTO `Ejemplares` (`Codigo`, `Libros_isbn`) VALUES ('456','2AC' );
 
+INSERT INTO `Prestamos` (`Id`, `Fecha`) VALUES ('1','2020-10-10' );
+
 
