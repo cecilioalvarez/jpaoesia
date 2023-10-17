@@ -1,17 +1,11 @@
 package es.oesia.jpa;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import es.oesia.jpa.repositorios.jpa.LibroRepositorio;
-import es.oesia.jpa.repositorios.jpa.LibroRepositorioJPA;
 
 class JPATest {
 
