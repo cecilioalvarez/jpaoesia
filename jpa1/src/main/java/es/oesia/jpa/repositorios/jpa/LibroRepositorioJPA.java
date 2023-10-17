@@ -12,6 +12,12 @@ public class LibroRepositorioJPA implements LibroRepositorio {
 
 	private EntityManager em;
 	
+	private final String sqlBuscarTodos="select l from Libro l";
+	private final String sqlBuscarTodosPorAutor="select l from Libro l where l.autor=:autor";
+	
+	
+	
+	
 	public LibroRepositorioJPA(EntityManager em) {
 		this.em = em;
 	}
@@ -22,16 +28,30 @@ public class LibroRepositorioJPA implements LibroRepositorio {
 
 	public List<Libro> buscarTodos() {
 		
-		return em.createNamedQuery("Libro.buscarTodos",Libro.class).getResultList();
+		return em.createQuery(sqlBuscarTodos,Libro.class).getResultList();
 			
 	}
 	
 	public List<Libro> buscarPorAutor(String autor) {
 		
-		TypedQuery<Libro> query=em.createNamedQuery("Libro.buscarTodosPorAutor",Libro.class);
+		TypedQuery<Libro> query=em.createQuery(sqlBuscarTodosPorAutor,Libro.class);
 		query.setParameter("autor", autor);
 		return query.getResultList();
 			
+	}
+	@Override
+	public void insertar(Libro libro) {
+		em.persist(libro);
+	}
+	@Override
+	public void borrar(Libro libro) {
+		em.remove(libro);
+		
+	}
+	@Override
+	public void salvar(Libro libro) {
+		em.merge(libro);
+		
 	}
 	
 	

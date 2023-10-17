@@ -18,12 +18,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Libros")
+/*
 @NamedQueries({
 	
 	@NamedQuery(name="Libro.buscarTodos",query="select l from Libro l"),
 	@NamedQuery(name="Libro.buscarTodosPorAutor",query="select l from Libro l where l.autor=:autor")
 
-})
+})*/
 public class Libro {
 
 	@Id
