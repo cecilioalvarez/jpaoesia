@@ -56,4 +56,10 @@ public class GenericRepositoryJPA<T, K> implements GenericJPA<T, K> {
 		return query.getResultList();
 	}
 
+	@Override
+	public T buscarUno(K miclave) {
+		// TODO Auto-generated method stub
+		return em.find(tipo, miclave);
+	}
+
 }

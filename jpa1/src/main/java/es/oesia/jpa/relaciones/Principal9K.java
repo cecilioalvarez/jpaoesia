@@ -20,6 +20,10 @@ public class Principal9K {
 		
 		repo.buscarTodos().forEach(System.out::println);
 		
+		System.out.println("**********************");
+		
+		Libro l=repo.buscarUno("1AB");
+		System.out.println(l);
 		
 	}
 

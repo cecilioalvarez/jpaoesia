@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface GenericJPA<T, K> {
 
+	T buscarUno (K miclave);
 	T insertar(T miTipo);
 
 	void borrar(T miTipo);
