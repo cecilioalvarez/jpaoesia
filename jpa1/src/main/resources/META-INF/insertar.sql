@@ -23,7 +23,28 @@ INSERT INTO `Prestamos` (`Id`, `Fecha`) VALUES ('1','2020-10-10' );
 
 INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('123','pedro','gomez' );
 INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('321','ana','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('1','pedro','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('2','ana','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('3','pedro','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('4','ana','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('5','pedro','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('6','ana','gomez' );
+
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('7','pedro','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('8','ana','gomez' );
+
+
 
 
 INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('123','1','2026-10-10' );
 INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('321','2','2026-10-11' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('1','1','2026-10-10' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('2','2','2026-10-11' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('3','1','2026-10-10' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('3','2','2026-10-11' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('4','1','2026-10-10' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('5','2','2026-10-11' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('6','1','2026-10-10' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('7','2','2026-10-11' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('8','1','2026-10-10' );
+
