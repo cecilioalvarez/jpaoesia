@@ -2,8 +2,10 @@ package es.oesia.jpa;
 
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,9 +13,13 @@ import javax.persistence.Table;
 public class Socio {
 	@Id
 	private String dni;
-	
 	private String nombre;
 	private String apellidos;
+	
+	@OneToOne(mappedBy="socio" ,cascade = CascadeType.ALL)
+	private Tarjeta tarjeta;
+	
+	
 	public String getDni() {
 		return dni;
 	}

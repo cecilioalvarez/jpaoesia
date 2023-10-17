@@ -23,3 +23,7 @@ INSERT INTO `Prestamos` (`Id`, `Fecha`) VALUES ('1','2020-10-10' );
 
 INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('123','pedro','gomez' );
 INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('321','ana','gomez' );
+
+
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('123','1','2026-10-10' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('321','2','2026-10-11' );
