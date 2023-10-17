@@ -1,4 +1,4 @@
-package es.oesia.jpa.relaciones;
+package es.oesia.jpa.relaciones.main1;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 
 import es.oesia.jpa.Libro;
 
-public class Principal4 {
+public class Principal {
 
 	public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class Principal4 {
 		EntityManager em = emf.createEntityManager();
 		// aqui siempre el nombre de la entidad de jpa
 		// y luego un alias compacto
-		TypedQuery<Libro> consulta = em.createQuery("select l from Libro l  inner join l.categoria c", Libro.class);
+		TypedQuery<Libro> consulta = em.createQuery("select l from Libro l", Libro.class);
 		List<Libro> lista = consulta.getResultList();
 		for (Libro l : lista) {
 

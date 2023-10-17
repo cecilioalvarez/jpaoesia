@@ -1,6 +1,6 @@
 //package es.oesia.jpa.relaciones;
 //
-//import java.util.List;
+//import java.util.Optional;
 //
 //import javax.persistence.EntityManager;
 //import javax.persistence.EntityManagerFactory;
@@ -10,7 +10,7 @@
 //import es.oesia.jpa.repositorios.jpa.LibroRepositorio;
 //import es.oesia.jpa.repositorios.jpa.LibroRepositorioJPAViejo;
 //
-//public class Principal9e {
+//public class Principal9d {
 //
 //	public static void main(String[] args) {
 //
@@ -18,9 +18,19 @@
 //		EntityManager em = emf.createEntityManager();
 //		
 //		LibroRepositorio repo= new LibroRepositorioJPAViejo(em);
-//		List<Libro> libros=repo.buscarPorAutor("cecilio");
+//		Optional<Libro> oLibro=repo.buscarUno("1AB");
+//		//optionals con programacion funcional un consumidor
 //		
-//		libros.stream().forEach(System.out::println);
+//		oLibro.ifPresent(System.out::println);
+//		
+//		/*
+//		if (oLibro.isPresent()) {
+//			
+//			System.out.println(oLibro.get().getTitulo());
+//		}else {
+//			System.out.println("no hay");
+//		}
+//		*/
 //		
 //		
 //
@@ -33,3 +43,6 @@
 //		System.out.println(l.getAutor());
 //	}
 //}
+
+
+

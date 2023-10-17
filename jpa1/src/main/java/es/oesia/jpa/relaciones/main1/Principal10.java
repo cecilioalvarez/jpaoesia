@@ -1,4 +1,4 @@
-package es.oesia.jpa.relaciones;
+package es.oesia.jpa.relaciones.main1;
 
 import java.util.List;
 

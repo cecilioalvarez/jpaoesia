@@ -1,4 +1,4 @@
-package es.oesia.jpa.relaciones;
+package es.oesia.jpa.relaciones.main1;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 import es.oesia.jpa.Ejemplar;
 import es.oesia.jpa.Prestamo;
 
-public class Principal9b {
+public class Principal9c {
 
 	public static void main(String[] args) {
 
@@ -15,15 +15,12 @@ public class Principal9b {
 		EntityManager em = emf.createEntityManager();
 		
 		Prestamo prestamo=em.find(Prestamo.class, 1);
-		Ejemplar ejemplar= em.find(Ejemplar.class, "123");
+	
 		
-		prestamo.addEjemplar(ejemplar);
-		
-		
-		em.getTransaction().begin();
-		em.merge(ejemplar);
-		em.merge(prestamo);
-		em.getTransaction().commit();
+		for (Ejemplar e: prestamo.getEjemplares()) {
+			
+			System.out.println(e.getCodigo());
+		}
 		
 
 	}

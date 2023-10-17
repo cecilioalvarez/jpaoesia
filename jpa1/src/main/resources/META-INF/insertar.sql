@@ -21,4 +21,5 @@ INSERT INTO `Ejemplares` (`Codigo`, `Libros_isbn`) VALUES ('456','2AC' );
 
 INSERT INTO `Prestamos` (`Id`, `Fecha`) VALUES ('1','2020-10-10' );
 
-
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('123','pedro','gomez' );
+INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`) VALUES ('321','ana','gomez' );
