@@ -1,19 +1,13 @@
 package es.oesia.jpa;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="personas")
-public class Persona {
+public class Persona extends BaseEntity {
 
-	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
 	private String nombre;
 	private String apellidos;
 	
@@ -24,12 +18,6 @@ public class Persona {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;

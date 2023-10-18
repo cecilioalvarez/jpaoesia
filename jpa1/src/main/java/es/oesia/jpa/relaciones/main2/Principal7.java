@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import es.oesia.jpa.BaseEntity;
 import es.oesia.jpa.Persona;
 
 public class Principal7 {
@@ -15,9 +16,9 @@ public class Principal7 {
 		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
-		Persona p= new Persona("david","gomez");
-		Persona p1= new Persona("marta","perez");
-		Persona p3= new Persona("ana","perez");
+		BaseEntity p= new Persona("david2","gomez");
+		BaseEntity p1= new Persona("marta2","perez");
+		BaseEntity p3= new Persona("ana2","perez");
 		em.persist(p);
 		em.persist(p1);
 		em.persist(p3);
