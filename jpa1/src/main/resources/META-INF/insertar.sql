@@ -27,6 +27,6 @@ INSERT INTO `Socios` (`dni`, `nombre`, `apellidos`,`calle`,`numero`) VALUES ('32
 
 
 
-INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('123','1','2026-10-10' );
-INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`) VALUES ('321','2','2026-10-11' );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`,`tipo`) VALUES ('123','1','2026-10-10', "joven" );
+INSERT INTO `Tarjetas` (`dni`, `numero`, `fecha`, `tipo`) VALUES ('321','2','2026-10-11' ,"jubilado");
 
